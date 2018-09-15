@@ -15,6 +15,7 @@ export default function Editor(props) {
       value={code}
       name="UNIQUE_ID_OF_DIV"
       fontSize={18}
+      tabSize={2}
       editorProps={{$blockScrolling: true}}
       commands={commands}
     />

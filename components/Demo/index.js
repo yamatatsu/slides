@@ -3,13 +3,25 @@ import React, { Component, Fragment } from 'react'
 import evalPipe from './evalPipe'
 import Editor from './Editor'
 
+// for eval
+import lodash from 'lodash'
+import lodashFp from 'lodash/fp'
+import ramda from 'ramda'
+
 export default class Demo extends Component {
   constructor(props) {
     super(props)
-    this.state = { code: `// type your code...\n1 |> console.log` }
+    this.state = { code: `// type your code...
+// _ < 'lodash'
+// fp < 'lodash/fp'
+// R < 'ramda'
+${props.initial}` }
   }
   setCode(code) { this.setState({ code }) }
-  eval() { evalPipe(this.state.code) }
+  eval() {
+    const R = ramda
+    evalPipe(this.state.code)
+  }
   render() {
     return (
       <Fragment>

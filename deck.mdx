@@ -28,4 +28,9 @@ export { default as theme } from './theme'
 - demo
 
 ---
-<Demo />
+<Demo
+  initial={`['pipe', 'line', '!!!']
+  |> R.map(s => s + '-')
+  |> (a => a.join(''))
+  |> alert`}
+/>
