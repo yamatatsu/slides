@@ -12,9 +12,9 @@ export default class Demo extends Component {
   constructor(props) {
     super(props)
     this.state = { code: `// type your code...
-// _ < 'lodash'
+// _  < 'lodash'
 // fp < 'lodash/fp'
-// R < 'ramda'
+// R  < 'ramda'
 ${props.initial}` }
   }
   setCode(code) { this.setState({ code }) }

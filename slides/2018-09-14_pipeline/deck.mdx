@@ -104,7 +104,7 @@ mapしてみる
   initial={`
 const { map } = R;
 [1, 2, 3]
-  |> map(n => n * 2)
+  |> map(n => n * 2) // <-
   |> JSON.stringify
   |> alert`}
 />
@@ -183,6 +183,23 @@ lodashみたいなもの
 </Container>
 
 ---
+### ramda groupBy
+<Container style={{ width: 1000 }}>
+  <Row>
+    <Col sm={12} md={6}>
+      <SandBox
+        initial={require("!raw-loader!./assets/codes/ramda_groupBy.js")}
+      />
+    </Col>
+    <Col sm={12} md={6}>
+      <p><a href='https://lodash.com/docs/4.17.10'>lodash docs</a></p>
+      <p><a href='https://github.com/lodash/lodash/tree/4.17.10-npm/fp'>lodash fp</a></p>
+      <p><a href='https://ramdajs.com/docs/'>ramda docs</a></p>
+    </Col>
+  </Row>
+</Container>
+
+---
 ### ramda sort
 <Container style={{ width: 1000 }}>
   <Row>
@@ -215,6 +232,24 @@ lodashみたいなもの
     </Col>
   </Row>
 </Container>
+
+---
+pipe, pipeP, compose, composeP, curry, R.__, cond, evolve, ...
+
+---
+まだまだ把握できてない関数が。。
+
+---
+しかしこれ本気で使うとマジで関数型プログラミング組めるのかも 🤔
+
+---
+### 個人の意見
+プロダクトコードでやりきるの結構アレなのでは？
+
+趣味コードならともかく、プロダクトコードでは lodash/fs が中庸な感じが。。。
+
+---
+# Ramda ☺ ️
 
 ---
 ご清聴ありがとうございました！！
