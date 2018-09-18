@@ -10,12 +10,15 @@ export default (props) => {
     <Fragment>
       <Head>
         <title>{title}</title>
-        <meta name="description" content={description || `やまたつ(${TWITTER_ACCOUNT})のスライド`} />
+        <meta name="description" content={description} />
+        <meta property="article:auther" content="https://twitter.com/yamatatsu193" />
         <meta name='twitter:card' content='summary' />
         <meta name='twitter:site' content={TWITTER_ACCOUNT} />
         <meta name='twitter:title' content={title} />
+        <meta name="twitter:description" content={description} />
         {image && <meta name='twitter:image' content={image} />}
         {image && <meta property="og:image" content={image} />}
+        {image && <meta property="og:image:secure_url" content={image} />}
         <meta property="og:site_name" content="slides.yamatatsu193.net" />
         <meta property="og:locale" content="ja_JP" />
         <meta property="og:url" content={url} />
