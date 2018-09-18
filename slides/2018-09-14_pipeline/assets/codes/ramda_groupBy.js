@@ -7,7 +7,11 @@ const users = {
 }
 
 const { groupBy, pipe, prop, divide, __ } = R
-const getGeneration = pipe(prop('age'), divide(__, 10), Math.floor)
+const getGeneration = pipe(
+  prop('age'),
+  divide(__, 10),
+  Math.floor,
+)
 const groupByGeneration = groupBy(getGeneration)
 
 users

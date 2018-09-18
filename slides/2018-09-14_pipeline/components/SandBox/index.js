@@ -11,11 +11,7 @@ import ramda from 'ramda'
 export default class Demo extends Component {
   constructor(props) {
     super(props)
-    this.state = { code: `// type your code...
-// _  < 'lodash'
-// fp < 'lodash/fp'
-// R  < 'ramda'
-${props.initial}` }
+    this.state = { code: props.initial }
   }
   setCode(code) { this.setState({ code }) }
   eval() {
