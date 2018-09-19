@@ -9,7 +9,7 @@ export default function Editor(props) {
   const { code, onChange, commands } = props
   return (
     <AceEditor
-      width={600}
+      width='600px'
       mode="javascript"
       theme="github"
       onChange={onChange}
