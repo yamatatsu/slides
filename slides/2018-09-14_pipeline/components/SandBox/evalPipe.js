@@ -10,6 +10,7 @@ const transformOptions = {
   babelrc: false,
   plugins: [
     [require("@babel/plugin-proposal-pipeline-operator"), { proposal: "minimal" }],
+    require("@babel/plugin-proposal-optional-chaining"),
   ],
 }
 
