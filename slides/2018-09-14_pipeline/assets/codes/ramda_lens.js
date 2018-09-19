@@ -6,7 +6,7 @@ const data = {
   },
 }
 
-const { lensPath, over } = R
+const { lensPath, over, set, view } = R
 const cLens = lensPath(['a', 'b', 'c']);
 
 data
