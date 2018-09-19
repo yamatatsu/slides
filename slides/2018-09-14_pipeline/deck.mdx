@@ -48,9 +48,9 @@ export { default as theme } from '../../theme'
 ---
 ### [Proposed Solutions](https://babeljs.io/blog/2018/07/19/whats-happening-with-the-pipeline-proposal#proposed-solutions)
 
-- "minimal" -  Minimal Pipeline (さっきの)
-- "fsharp" -  F#-Style Pipeline (Coming Soon!)
-- "smart" -  Smart Pipeline (Coming Soon!)
+- Minimal (さっきの)
+- F#-Style (Coming Soon!)
+- Smart (Coming Soon!)
 
 ---
 ### fsharp
@@ -171,19 +171,7 @@ lodashみたいなもの
 <SandBox initial={require("!raw-loader!./assets/codes/ramda_tap.js")} />
 
 ---
-pipe, pipeP, compose, composeP, curry, R.__, cond, evolve, ...
-
----
-まだまだ把握できてない関数が。。
-
----
-しかしこれ本気で使うとマジで関数型プログラミング組めるのかも 🤔
-
----
-### 個人の意見
-プロダクトコードでやりきるの結構アレなのでは？
-
-趣味コードならともかく、プロダクトコードでは lodash/fs が中庸な感じが。。。
+pipe, pipeP, compose, composeP, curry, R.__, cond, evolve, groupBy, juxt, lens, view, set, over, lensIndex, lensProp, lensPath, lift, mapObjIndexed, of, objOf, partial, pathSatisfies, range, scan, times, when, ...
 
 ---
 # Ramda ☺ ️
@@ -191,9 +179,8 @@ pipe, pipeP, compose, composeP, curry, R.__, cond, evolve, ...
 ---
 ご清聴ありがとうございました！！
 
-
 ---
-### sandbox
+### sandbox(pipeline, optional-chaining)
 <Container>
   <Row>
     <Col sm={12} md={8}>
