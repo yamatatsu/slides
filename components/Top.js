@@ -9,6 +9,9 @@ export default (props) => {
   return (
     <Fragment>
       <Head>
+        <link rel="icon" href="/favicon.ico"/>
+        <link rel="apple-touch-icon" href="/apple-touch-icon-152x152.png" sizes="152x152"/>
+        <link rel="icon" href="/android-chrome-192x192.png" sizes="192x192" type="image/png"/>
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta property="article:auther" content="https://twitter.com/yamatatsu193" />

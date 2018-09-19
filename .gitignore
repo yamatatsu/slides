@@ -1,4 +1,8 @@
 node_modules
 *.log
-dist
 .cache
+
+dist/*
+!dist/android-chrome-192x192.png
+!dist/apple-touch-icon-152x152.png
+!dist/favicon.ico
