@@ -75,7 +75,7 @@ Promise.resolve({
   second:'line',
   third:'!!!',
 })
-  |> await // <- これ！
+  |> await         // <-
   |> Object.values
   |> (a => a.join(''))
   |> alert`}
@@ -93,9 +93,9 @@ Promise.resolve({
   second:'line',
   third:'!!!',
 })
-  |> await # // <- これ！
+  |> await #       // <-
   |> Object.values
-  |> #.join('') // <- これ！
+  |> #.join('')    // <- 元: (a => a.join(''))
   |> alert`}
   />
 </div>
