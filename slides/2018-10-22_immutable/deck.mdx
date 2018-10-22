@@ -1,0 +1,196 @@
+import { Head, Image } from 'mdx-deck'
+import { CodeSurfer } from "mdx-deck-code-surfer"
+import { Container, Row, Col } from 'react-grid-system'
+import Top from '../../components/Top.js'
+import SandBox from './components/SandBox'
+import packageJson from './package.json'
+
+export { default as theme } from '../../theme'
+
+<Top
+  title="Immutable for Redux"
+  image="https://i.gyazo.com/9e68b75fe52f55e65919e14288dc3c82.png"
+  eventName="#react_kai @1st"
+  urlPath={packageJson.urlPath}
+/>
+
+---
+# 自己紹介
+---
+<img src="https://i.gyazo.com/87d23d84bc93c83bb165c9d2f239f703.png" width="275"/>
+
+- CureApp
+- アプリで医療機器を作ってる
+- react, react native, electron, Node.js, MongoDB
+
+---
+# 話すこと
+---
+- Immutable
+- seamless-immutable
+- Immer
+- mori
+- lens (lamda)
+- power-assign
+---
+### おそらく全部知っている人はいないでしょう
+---
+## power-assign
+↑↑↑
+
+CureAppのOSS
+---
+はじめます
+---
+### vanillaの例
+<SandBox
+  doc="https://facebook.github.io/immutable-js/docs/"
+  initial={`const data = [
+  { name: 'hoge', hobbies: ['piano', 'cycling'] },
+  { name: 'fuga', hobbies: ['tennis', 'soccer'] },
+  { name: 'piyo', hobbies: [] },
+]
+data.map(p => ({
+  ...p,
+  hobbies: [...p.hobbies, 'boxing'],
+}))`}
+/>
+
+---
+# Immutable
+---
+### Immutable
+言わずと知れた
+https://redux.js.org/recipes/usingimmutablejs
+---
+### Immutable
+<SandBox
+  doc="https://facebook.github.io/immutable-js/docs/"
+  initial={`const data = [
+  { name: 'hoge', hobbies: ['piano', 'cycling'] },
+  { name: 'fuga', hobbies: ['tennis', 'soccer'] },
+  { name: 'piyo', hobbies: [] },
+]
+I.fromJS(data)
+  .updateIn(
+    [2, 'hobbies'],
+    arr => arr.push('boxing'),
+  )
+  // .map(u => u.name)
+  // .concat({ name: 'peco' })
+  // .setIn([3, 'hobbies'], ['sleep'])`}
+/>
+
+---
+# seamless-immutable
+---
+### seamless-immutable
+<SandBox
+  doc="https://github.com/rtfeldman/seamless-immutable#seamless-immutable"
+  initial={`const data = [
+  { name: 'hoge', hobbies: ['piano', 'cycling'] },
+  { name: 'fuga', hobbies: ['tennis', 'soccer'] },
+  { name: 'piyo', hobbies: [] },
+]
+SI.from(data)
+  .updateIn(
+    [2, 'hobbies'],
+    arr => ([...arr, 'boxing']),
+  )
+  // .map(u => u.name)
+  // .concat({ name: 'peco' })
+  // .setIn([3, 'hobbies'], ['sleep'])`}
+/>
+
+---
+# Immer
+---
+### Immer
+<SandBox
+  doc="https://github.com/mweststrate/immer#immer"
+  initial={`const data = [
+  { name: 'hoge', hobbies: ['piano', 'cycling'] },
+  { name: 'fuga', hobbies: ['tennis', 'soccer'] },
+  { name: 'piyo', hobbies: [] },
+]
+const newData = produce(data, draft => {
+  draft[2].hobbies.push('boxing')
+})
+newData
+// newData[2] === data[2] // false
+// newData[2].hobbies === data[2].hobbies // false
+// newData[0] === data[0] // true`}
+/>
+
+---
+# mori
+---
+### mori
+省略
+
+---
+# lens (lamda)
+---
+### lens (lamda)
+<SandBox
+  doc="https://ramdajs.com/docs/#lens"
+  initial={`const data = [
+  { name: 'hoge', hobbies: ['piano', 'cycling'] },
+  { name: 'fuga', hobbies: ['tennis', 'soccer'] },
+  { name: 'piyo', hobbies: [] },
+]
+const append = R.over(
+  R.lensPath([2, 'hobbies']),
+  R.append(['boxing']),
+)
+append(data)`}
+/>
+
+---
+# power-assign
+---
+### power-assign
+<SandBox
+  doc="https://github.com/phenyl-js/phenyl/tree/master/modules/power-assign#power-assign-"
+  initial={`const data = [
+  { name: 'hoge', hobbies: ['piano', 'cycling'] },
+  { name: 'fuga', hobbies: ['tennis', 'soccer'] },
+  { name: 'piyo', hobbies: [] },
+]
+powerAssign.assign(data, {
+  $push: {
+    '2.hobbies': 'boxing',
+  }
+})`}
+/>
+
+---
+### power-assign のつづき
+
+---
+変更をただの json として表現できる
+
+---
+聞いたことあるぞ :thinking_face:
+
+---
+[You Might Not Need Redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
+
+<q>Pass action objects over the network to implement collaborative environments without dramatic changes to how the code is written.</q>
+
+---
+「clientで変更した内容をサーバーに同期」
+
+とかできる
+
+---
+## [phenyl](https://github.com/phenyl-js/phenyl)
+
+---
+注
+
+- userデータが主体のアプリ向けです
+- ECとかマッチングとかには向いてないよ
+
+---
+ご清聴ありがとうございました！！
