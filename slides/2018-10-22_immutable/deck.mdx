@@ -33,8 +33,6 @@ export { default as theme } from '../../theme'
 - lens (lamda)
 - power-assign
 ---
-### おそらく全部知っている人はいないでしょう
----
 ## power-assign
 ↑↑↑
 
@@ -158,9 +156,7 @@ append(data)`}
   { name: 'piyo', hobbies: [] },
 ]
 powerAssign.assign(data, {
-  $push: {
-    '2.hobbies': 'boxing',
-  }
+  $push: { '2.hobbies': 'boxing' }
 })`}
 />
 
@@ -171,8 +167,29 @@ powerAssign.assign(data, {
 変更をただの json として表現できる
 
 ---
-聞いたことあるぞ :thinking_face:
+- domainの変更をjsonで表現できる
+- 変更をPOSTのbodyに乗っけれる
 
+---
+# domainの変更をjsonで表現できる
+---
+<CodeSurfer
+  title="redux-thunk sample"
+  code={require('!raw-loader!./assets/codes/usecase.ts')}
+  lang="typescript"
+  // showNumbers
+  dark={false}
+  steps={[
+    { notes: ""},
+    { lines: [7], notes: "stateから患者情報とって" },
+    { tokens: {8:[4,5,6,7,8,9,10] }, notes: "domain通して" },
+    { tokens: {8:[2]}, notes: "domain eventが手に入って" },
+    { lines: [12], notes: "actionに乗っけて" },
+    { range: [10,13], notes: "dispatchする" },
+  ]}
+/>
+---
+# 変更をPOSTのbodyに乗っけれる
 ---
 [You Might Not Need Redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
 
@@ -185,12 +202,16 @@ powerAssign.assign(data, {
 
 ---
 ## [phenyl](https://github.com/phenyl-js/phenyl)
-
 ---
-注
-
 - userデータが主体のアプリ向けです
 - ECとかマッチングとかには向いてないよ
-
+---
+例えば、患者のデータが患者アプリからしか変わらなくて、医者が変更するデータが分離されてる治療アプリとか。
+---
+![](https://cureapp.co.jp/img/company/company-logo.png)
+---
+宣伝でした。
+---
+おわり。
 ---
 ご清聴ありがとうございました！！
