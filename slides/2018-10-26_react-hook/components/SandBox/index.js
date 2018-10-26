@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from '../../node_modules/react'
+import React, { Component, Fragment } from 'react'
 import { Container, Row, Col } from 'react-grid-system'
 
 import evalPipe from './evalPipe'
@@ -11,12 +11,10 @@ export default class Demo extends Component {
       code: props.initial,
       result: evalPipe(props.initial)
     }
-    this.eval()
   }
   setCode(code) { this.setState({ code }) }
   eval = () => {
     const result = evalPipe(this.state.code)
-    console.log(result)
     this.setState({ result })
   }
   render() {

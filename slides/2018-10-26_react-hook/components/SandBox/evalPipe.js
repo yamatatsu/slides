@@ -1,8 +1,6 @@
 import _React, {
   useState as _useState,
   useEffect as _useEffect,
-
-  useEffect as _useEffect,
   useContext as _useContext,
   useReducer as _useReducer,
   useCallback as _useCallback,
@@ -11,7 +9,7 @@ import _React, {
   useImperativeMethods as _useImperativeMethods,
   useMutationEffect as _useMutationEffect,
   useLayoutEffect as _useLayoutEffect,
-} from '../../node_modules/react'
+} from 'react'
 import { transform } from '@babel/core/lib/transform'
 import stringify from 'json-stringify-pretty-compact'
 
@@ -52,8 +50,6 @@ const transformOptions = {
 }
 
 export default function evalPipe(code) {
-  // console.log(Sample)
   const Sample = eval(transform(code, transformOptions).code)
-  console.log(Sample)
   return Sample
 }
