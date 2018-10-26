@@ -1,0 +1,43 @@
+import { Head, Image } from 'mdx-deck'
+import { Container, Row, Col } from 'react-grid-system'
+import Top from '../../components/Top.js'
+import SandBox from './components/SandBox'
+import UseSampleExample from './components/useState'
+import packageJson from './package.json'
+
+export { default as theme } from '../../theme'
+
+<Top
+  title="React Hooks"
+  // image="https://i.gyazo.com/9e68b75fe52f55e65919e14288dc3c82.png"
+  eventName="#react_kai @1st"
+  urlPath={packageJson.urlPath}
+/>
+
+---
+# 自己紹介
+---
+<img src="https://i.gyazo.com/87d23d84bc93c83bb165c9d2f239f703.png" width="275"/>
+
+- CureApp
+- アプリで医療機器を作ってる
+- react, react native, electron, Node.js, MongoDB
+
+---
+# 話すこと
+---
+- Hooks
+---
+はじめます
+---
+<SandBox
+  initial={require('!raw-loader!./assets/codes/01_useState.js')}
+/>
+---
+<SandBox
+  initial={require('!raw-loader!./assets/codes/02_useStateWithObj.js')}
+/>
+---
+おわり。
+---
+ご清聴ありがとうございました！！
