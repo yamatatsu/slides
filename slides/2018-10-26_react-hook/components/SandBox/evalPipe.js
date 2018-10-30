@@ -9,6 +9,8 @@ import _React, {
   useImperativeMethods as _useImperativeMethods,
   useMutationEffect as _useMutationEffect,
   useLayoutEffect as _useLayoutEffect,
+  forwardRef as _forwardRef,
+  memo as _memo,
 } from 'react'
 import { transform } from '@babel/core/lib/transform'
 import stringify from 'json-stringify-pretty-compact'
@@ -35,6 +37,8 @@ const useRef = _useRef
 const useImperativeMethods = _useImperativeMethods
 const useMutationEffect = _useMutationEffect
 const useLayoutEffect = _useLayoutEffect
+const forwardRef = _forwardRef
+const memo = _memo
 
 const transformOptions = {
   inputSourceMap: false,

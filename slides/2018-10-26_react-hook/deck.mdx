@@ -30,9 +30,67 @@ export { default as theme } from '../../theme'
 ---
 はじめます
 ---
-<SandBox
-  initial={require('!raw-loader!./assets/codes/01_useState.js')}
-/>
+useState
+---
+<SandBox initial={require('!raw-loader!./assets/codes/01_useState.js')} />
+---
+useEffect
+
+(注:怖い！と感じたらブラウザ再描画！)
+---
+<SandBox initial={require('!raw-loader!./assets/codes/02_useEffect.js')} />
+---
+useContext
+---
+<SandBox initial={require('!raw-loader!./assets/codes/03_useContext.js')} />
+---
+useReducer
+---
+reducerっぽく使えるuseStateって感じです。
+---
+useCallback
+---
+<SandBox initial={require('!raw-loader!./assets/codes/04_useCallback.js')} />
+---
+<SandBox initial={require('!raw-loader!./assets/codes/05_useCallback2.js')} />
+---
+useMemo
+---
+useCallbackに似てる。reselectっぽいやつ。memoizeしてくれる。
+---
+useRef
+---
+<SandBox initial={require('!raw-loader!./assets/codes/06_useRef.js')} />
+---
+useImperativeMethods
+---
+<SandBox initial={require('!raw-loader!./assets/codes/07_useImperativeMethods.js')} />
+
+
+---
+didMountっぽいことしてみたい
+---
+<SandBox initial={require('!raw-loader!./assets/codes/20_like_didMount.js')} />
+---
+親コンポーネントが再描画されると走ってしまう
+---
+サンプル
+---
+memo化
+---
+サンプル
+---
+# 🤔
+---
+<a href="https://gyazo.com/ce237732d601e8e096e4828f10912ff1"><img src="https://i.gyazo.com/ce237732d601e8e096e4828f10912ff1.png" alt="Image from Gyazo" width="617"/></a>
+---
+<a href="https://gyazo.com/b3d3c8f797d9b679cfe3dce1d027190d"><img src="https://i.gyazo.com/b3d3c8f797d9b679cfe3dce1d027190d.png" alt="Image from Gyazo" width="700"/></a>
+---
+<a href="https://gyazo.com/7a492729ae77d40f1a6bd2656cffbcc8"><img src="https://i.gyazo.com/7a492729ae77d40f1a6bd2656cffbcc8.png" alt="Image from Gyazo" width="612"/></a>
+---
+<a href="https://gyazo.com/19fbaea45674ba423733f8375de72665"><img src="https://i.gyazo.com/19fbaea45674ba423733f8375de72665.png" alt="Image from Gyazo" width="620"/></a>
+---
+
 ---
 おわり。
 ---
