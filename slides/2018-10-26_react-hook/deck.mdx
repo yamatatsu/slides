@@ -8,8 +8,8 @@ import packageJson from './package.json'
 export { default as theme } from '../../theme'
 
 <Top
-  title="React Hooks"
-  // image="https://i.gyazo.com/9e68b75fe52f55e65919e14288dc3c82.png"
+  title="React Hooks で遊ぼう"
+  image="https://i.gyazo.com/2513c419c20958aac1e144ffb88de5b8.png"
   eventName="#react_kai @1st"
   urlPath={packageJson.urlPath}
 />
@@ -29,6 +29,19 @@ export { default as theme } from '../../theme'
 - Hooks
 ---
 はじめます
+---
+タイムラインがReact Hooksで騒がしい
+---
+React Hooks とは？
+---
+<a href="https://reactjs.org/docs/hooks-intro.html" target="_blank"><img src="https://i.gyazo.com/acb0d1a6cc21a52351606359e111d843.png" alt="Image from Gyazo" width="937"/></a>
+---
+三行で
+* Functional Componentで状態を持てる
+* Functional Componentでupdate系のイベントを扱える
+* Consumer無しでContextを使える
+---
+使ってみよう
 ---
 useState
 ---
@@ -65,6 +78,8 @@ useCallback
 ---
 <SandBox initial={require('!raw-loader!./assets/codes/04_useCallback.js')} />
 ---
+でもこのケース実はuseCallbackいらない
+---
 <SandBox initial={require('!raw-loader!./assets/codes/05_useCallback2.js')} />
 ---
 まとめ
@@ -94,30 +109,30 @@ useImperativeMethods
 ---
 useMutationEffect
 ---
-まとめ
-
-🙇‍
+# 🙇‍
 ---
 useLayoutEffect
 ---
-まとめ
-
-🙇‍
+# 🙇‍
 ---
 didMountっぽいことしてみたい
 
 ページ表示でワンタイムにfetchがしたい
 ---
-<a href="https://gyazo.com/ce237732d601e8e096e4828f10912ff1"><img src="https://i.gyazo.com/ce237732d601e8e096e4828f10912ff1.png" alt="Image from Gyazo" width="617"/></a>
+<a href="https://twitter.com/tylermcginnis/status/1056965558384582662" target="_blank"><img src="https://i.gyazo.com/ce237732d601e8e096e4828f10912ff1.png" alt="Image from Gyazo" width="617"/></a>
 ---
-<a href="https://gyazo.com/b3d3c8f797d9b679cfe3dce1d027190d"><img src="https://i.gyazo.com/b3d3c8f797d9b679cfe3dce1d027190d.png" alt="Image from Gyazo" width="700"/></a>
+<a href="https://twitter.com/tylermcginnis/status/1056965558384582662" target="_blank"><img src="https://i.gyazo.com/b3d3c8f797d9b679cfe3dce1d027190d.png" alt="Image from Gyazo" width="700"/></a>
 ---
-<a href="https://gyazo.com/7a492729ae77d40f1a6bd2656cffbcc8"><img src="https://i.gyazo.com/7a492729ae77d40f1a6bd2656cffbcc8.png" alt="Image from Gyazo" width="612"/></a>
+<a href="https://twitter.com/dan_abramov/status/1057011444796084224" target="_blank"><img src="https://i.gyazo.com/7a492729ae77d40f1a6bd2656cffbcc8.png" alt="Image from Gyazo" width="612"/></a>
 ---
-<a href="https://gyazo.com/19fbaea45674ba423733f8375de72665"><img src="https://i.gyazo.com/19fbaea45674ba423733f8375de72665.png" alt="Image from Gyazo" width="620"/></a>
+<a href="https://twitter.com/dan_abramov/status/1057011888335347713" target="_blank"><img src="https://i.gyazo.com/19fbaea45674ba423733f8375de72665.png" alt="Image from Gyazo" width="620"/></a>
 ---
 # Suspenseを待たれよ
 ---
 おわり。
+---
+おまけ
+
+https://medium.com/@dan_abramov/making-sense-of-react-hooks-fdbde8803889
 ---
 ご清聴ありがとうございました！！
