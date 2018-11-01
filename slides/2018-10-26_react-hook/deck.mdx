@@ -34,19 +34,32 @@ useState
 ---
 <SandBox initial={require('!raw-loader!./assets/codes/01_useState.js')} />
 ---
+まとめ
+* functional componentに状態持てる
+---
 useEffect
-
-(注:怖い！と感じたらブラウザ再描画！)
 ---
 <SandBox initial={require('!raw-loader!./assets/codes/02_useEffect.js')} />
+---
+(たぶん)よくある使い方
+---
+<SandBox initial={require('!raw-loader!./assets/codes/02_useEffect2.js')} />
+---
+感想
+* fire storeのobserveとかしたい
+* ねずみ算は怖い
 ---
 useContext
 ---
 <SandBox initial={require('!raw-loader!./assets/codes/03_useContext.js')} />
 ---
+まとめ
+* Consumerいらなくなる
+---
 useReducer
 ---
-reducerっぽく使えるuseStateって感じです。
+まとめ
+* reducerっぽく使えるuseState
 ---
 useCallback
 ---
@@ -54,33 +67,46 @@ useCallback
 ---
 <SandBox initial={require('!raw-loader!./assets/codes/05_useCallback2.js')} />
 ---
+まとめ
+* 一回だけ走ってほしいやつ
+---
 useMemo
 ---
-useCallbackに似てる。reselectっぽいやつ。memoizeしてくれる。
+まとめ
+* useCallbackに似てる
+* 関数の戻り値をくれる
+* reselectっぽい
+* memoizeしてくれる
 ---
 useRef
 ---
 <SandBox initial={require('!raw-loader!./assets/codes/06_useRef.js')} />
 ---
+まとめ
+* refとれる
+---
 useImperativeMethods
 ---
 <SandBox initial={require('!raw-loader!./assets/codes/07_useImperativeMethods.js')} />
+---
+まとめ
+* refのカプセル化(?)
+---
+useMutationEffect
+---
+まとめ
 
+🙇‍
+---
+useLayoutEffect
+---
+まとめ
 
+🙇‍
 ---
 didMountっぽいことしてみたい
----
-<SandBox initial={require('!raw-loader!./assets/codes/20_like_didMount.js')} />
----
-親コンポーネントが再描画されると走ってしまう
----
-サンプル
----
-memo化
----
-サンプル
----
-# 🤔
+
+ページ表示でワンタイムにfetchがしたい
 ---
 <a href="https://gyazo.com/ce237732d601e8e096e4828f10912ff1"><img src="https://i.gyazo.com/ce237732d601e8e096e4828f10912ff1.png" alt="Image from Gyazo" width="617"/></a>
 ---
@@ -90,7 +116,7 @@ memo化
 ---
 <a href="https://gyazo.com/19fbaea45674ba423733f8375de72665"><img src="https://i.gyazo.com/19fbaea45674ba423733f8375de72665.png" alt="Image from Gyazo" width="620"/></a>
 ---
-
+# Suspenseを待たれよ
 ---
 おわり。
 ---

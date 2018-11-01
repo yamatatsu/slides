@@ -6,15 +6,16 @@ const Counter = () => {
   return (
     <>
       <p>{count}</p>
-      <button onClick={inc}>inc</button>
+      <button onClick={inc}>increment</button>
     </>
   )
 }
 
 () => {
   const [count, setCount] = useState(0);
+  const inc = () => setCount(count + 1)
   return (
-    <Provider value={{ count, inc: () => setCount(count + 1) }}>
+    <Provider value={{ count, inc }}>
       <Counter />
     </Provider>
   )

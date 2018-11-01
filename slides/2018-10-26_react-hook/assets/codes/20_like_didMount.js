@@ -5,7 +5,7 @@
   useEffect(() => {
     console.log('Hi!!')
     setTimeout(() => say('Hi!!'), 1000)
-  }, [1]); // ぜったい不変なkey
+  }, ['key']);
 
   return (
     <>

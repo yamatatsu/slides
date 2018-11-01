@@ -1,18 +1,18 @@
 const memoKey = 'hoge';
 () => {
   const [count, setCount] = useState(0)
+  const inc = () => setCount(count + 1)
+
   const sayHi = useCallback(
-    () => console.log('Hi!!'),
+    () => console.log('Hi!!', count),
     [memoKey],
   );
-  // const sayHi = () => console.log('Hi!!');
+  // const sayHi = () => console.log('Hi!!', count)
   useEffect(sayHi);
   return (
     <>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
+      <p>{count}</p>
+      <button onClick={inc}>increment</button>
     </>
   )
 }

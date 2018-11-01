@@ -12,6 +12,7 @@ import _React, {
   forwardRef as _forwardRef,
   memo as _memo,
 } from 'react'
+import { createResource as _createResource, createCache as _createCache } from "simple-cache-provider";
 import { transform } from '@babel/core/lib/transform'
 import stringify from 'json-stringify-pretty-compact'
 
@@ -39,6 +40,8 @@ const useMutationEffect = _useMutationEffect
 const useLayoutEffect = _useLayoutEffect
 const forwardRef = _forwardRef
 const memo = _memo
+const createResource = _createResource
+const createCache = _createCache
 
 const transformOptions = {
   inputSourceMap: false,
@@ -50,6 +53,7 @@ const transformOptions = {
     [require("@babel/plugin-proposal-pipeline-operator"), { proposal: "minimal" }],
     require("@babel/plugin-proposal-optional-chaining"),
     require("@babel/plugin-proposal-object-rest-spread"),
+    require("@babel/plugin-proposal-class-properties"),
   ],
 }
 
