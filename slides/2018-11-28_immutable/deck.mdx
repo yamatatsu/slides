@@ -30,24 +30,21 @@ export { default as theme } from '../../theme'
 - seamless-immutable
 - Immer
 - mori
-- lens (lamda)
+- lens (ramda)
 - power-assign
----
-## power-assign
-↑↑↑
-
-CureAppのOSS
 ---
 はじめます
 ---
 ### vanillaの例
 <SandBox
   doc="https://facebook.github.io/immutable-js/docs/"
-  initial={`const data = [
-  { name: 'hoge', hobbies: ['piano', 'cycling'] },
-  { name: 'fuga', hobbies: ['tennis', 'soccer'] },
-  { name: 'piyo', hobbies: [] },
-]
+  initial={`const data = {
+  users: [
+    { name: 'hoge', hobbies: ['piano', 'cycling'] },
+    { name: 'fuga', hobbies: ['tennis', 'soccer'] },
+    { name: 'piyo', hobbies: [] },
+  ],
+}
 data.map(p => ({
   ...p,
   hobbies: [...p.hobbies, 'boxing'],
@@ -64,16 +61,21 @@ https://redux.js.org/recipes/usingimmutablejs
 ### Immutable
 <SandBox
   doc="https://facebook.github.io/immutable-js/docs/"
-  initial={`const data = [
-  { name: 'hoge', hobbies: ['piano', 'cycling'] },
-  { name: 'fuga', hobbies: ['tennis', 'soccer'] },
-  { name: 'piyo', hobbies: [] },
-]
+  initial={`const data = {
+  users: [
+    { name: 'hoge', hobbies: ['piano', 'cycling'] },
+    { name: 'fuga', hobbies: ['tennis', 'soccer'] },
+    { name: 'piyo', hobbies: [] },
+  ],
+}
 I.fromJS(data)
   .updateIn(
-    [2, 'hobbies'],
+    ['users', 2, 'hobbies'],
     arr => arr.push('boxing'),
   )
+  // .get('users')
+  .toJS()
+  // .map(u => u.get('name'))
   // .map(u => u.name)
   // .concat({ name: 'peco' })
   // .setIn([3, 'hobbies'], ['sleep'])`}
@@ -85,16 +87,22 @@ I.fromJS(data)
 ### seamless-immutable
 <SandBox
   doc="https://github.com/rtfeldman/seamless-immutable#seamless-immutable"
-  initial={`const data = [
-  { name: 'hoge', hobbies: ['piano', 'cycling'] },
-  { name: 'fuga', hobbies: ['tennis', 'soccer'] },
-  { name: 'piyo', hobbies: [] },
-]
+  initial={`const data = {
+  users: [
+    { name: 'hoge', hobbies: ['piano', 'cycling'] },
+    { name: 'fuga', hobbies: ['tennis', 'soccer'] },
+    { name: 'piyo', hobbies: [] },
+  ],
+}
 SI.from(data)
   .updateIn(
-    [2, 'hobbies'],
+    ['users', 2, 'hobbies'],
     arr => ([...arr, 'boxing']),
   )
+  // .get('users')
+  // .users
+  .toJS()
+  // .map(u => u.get('name'))
   // .map(u => u.name)
   // .concat({ name: 'peco' })
   // .setIn([3, 'hobbies'], ['sleep'])`}
@@ -106,18 +114,20 @@ SI.from(data)
 ### Immer
 <SandBox
   doc="https://github.com/mweststrate/immer#immer"
-  initial={`const data = [
-  { name: 'hoge', hobbies: ['piano', 'cycling'] },
-  { name: 'fuga', hobbies: ['tennis', 'soccer'] },
-  { name: 'piyo', hobbies: [] },
-]
+  initial={`const data = {
+  users: [
+    { name: 'hoge', hobbies: ['piano', 'cycling'] },
+    { name: 'fuga', hobbies: ['tennis', 'soccer'] },
+    { name: 'piyo', hobbies: [] },
+  ],
+}
 const newData = produce(data, draft => {
-  draft[2].hobbies.push('boxing')
+  draft.users[2].hobbies.push('boxing')
 })
 newData
-// newData[2] === data[2] // false
-// newData[2].hobbies === data[2].hobbies // false
-// newData[0] === data[0] // true`}
+// data
+// newData.users[2] === data.users[2] // false
+// newData.users[0] === data.users[0] // true`}
 />
 
 ---
@@ -127,18 +137,20 @@ newData
 省略
 
 ---
-# lens (lamda)
+# lens (ramda)
 ---
-### lens (lamda)
+### lens (ramda)
 <SandBox
   doc="https://ramdajs.com/docs/#lens"
-  initial={`const data = [
-  { name: 'hoge', hobbies: ['piano', 'cycling'] },
-  { name: 'fuga', hobbies: ['tennis', 'soccer'] },
-  { name: 'piyo', hobbies: [] },
-]
+  initial={`const data = {
+  users: [
+    { name: 'hoge', hobbies: ['piano', 'cycling'] },
+    { name: 'fuga', hobbies: ['tennis', 'soccer'] },
+    { name: 'piyo', hobbies: [] },
+  ],
+}
 const append = R.over(
-  R.lensPath([2, 'hobbies']),
+  R.lensPath(['users', 2, 'hobbies']),
   R.append('boxing'),
 )
 append(data)`}
@@ -150,13 +162,27 @@ append(data)`}
 ### power-assign
 <SandBox
   doc="https://github.com/phenyl-js/phenyl/tree/master/modules/power-assign#power-assign-"
-  initial={`const data = [
-  { name: 'hoge', hobbies: ['piano', 'cycling'] },
-  { name: 'fuga', hobbies: ['tennis', 'soccer'] },
-  { name: 'piyo', hobbies: [] },
-]
+  initial={`const data = {
+  users: [
+    { name: 'hoge', hobbies: ['piano', 'cycling'] },
+    { name: 'fuga', hobbies: ['tennis', 'soccer'] },
+    { name: 'piyo', hobbies: [] },
+  ],
+}
 powerAssign.assign(data, {
-  $push: { '2.hobbies': 'boxing' }
+  $push: { 'users[2].hobbies': 'boxing' },
+  // $pop: { 'users[0].hobbies': true },
+  // $push: {
+  //   'users[2].hobbies': 'boxing',
+  //   'users[0].hobbies': 'chess',
+  // },
+  // $push: { 'users': {
+  //   $each: [
+  //     { name: 'foo' },
+  //     { name: 'bar' },
+  //   ],
+  //   $sort: { name: -1 },
+  // }},
 })`}
 />
 

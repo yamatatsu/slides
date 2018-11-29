@@ -16,9 +16,12 @@ export default class Demo extends Component {
   }
   setCode(code) { this.setState({ code }) }
   eval = () => {
-    const result = evalPipe(this.state.code)
-    console.log(result)
-    this.setState({ result })
+    try {
+      const result = evalPipe(this.state.code)
+      this.setState({ result })
+    } catch (e) {
+      alert(e)
+    }
   }
   render() {
     return (
