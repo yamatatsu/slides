@@ -47,9 +47,10 @@ export { default as theme } from '../../theme'
     { name: 'piyo', hobbies: [] },
   ],
 }
-const users = data.users.map((p, i) => {
-  const hobbies = (i === 2) ? [...p.hobbies, 'boxing'] : p.hobbies
-  return { ...p, hobbies }
+const users = data.users.map((u, i) => {
+  const hobbies = (i === 2) ?
+    [...u.hobbies, 'boxing'] : u.hobbies
+  return { ...u, hobbies }
 });
 const newData = { ...data, users }
 newData`}
