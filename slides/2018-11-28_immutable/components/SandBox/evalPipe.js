@@ -12,6 +12,7 @@ import * as mori from 'mori'
 import * as powerAssign from 'power-assign'
 
 const produce = _produce
+const update = powerAssign.assign
 
 const transformOptions = {
   inputSourceMap: false,
