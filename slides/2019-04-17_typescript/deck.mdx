@@ -81,11 +81,15 @@ c2.age = 29
 
 <SandBox
   initial={`// Record<K,T>
-type Customer = { id: string, name: string, age: number }\n
-// エラーになる
-const c1: Customer = { id: '123', name: '太郎' }
-// エラーにならない
-const c2: Partial<Customer> = { id: '123', name: '太郎' }
+type Color = 'red' | 'green' | 'blue'
+\n// だめ
+type ColorCodes1 = { [key: Color]: string }
+// だめ
+type ColorCodes2 = { [key in Color]: string }
+// OK
+type ColorCodes3 = { [key in Color]: string }
+\n// こう書ける
+type ColorCodes4 = Record<Color, string>
 `}
 />
 
