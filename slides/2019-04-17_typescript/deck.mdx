@@ -8,11 +8,10 @@ import packageJson from './package.json'
 export { default as theme } from '../../theme'
 
 <Top
-  title="Immutable for Redux"
-  image="https://i.gyazo.com/9e68b75fe52f55e65919e14288dc3c82.png"
-  eventName="Meguro.es #18"
+  title="書いて覚える Utility Types"
+  eventName="WeJS #31"
   urlPath={packageJson.urlPath}
-  hashtag="meguroes"
+  hashtag="WeJS"
 />
 
 ---
@@ -32,13 +31,157 @@ export { default as theme } from '../../theme'
 
 ---
 
+## 今日話すこと
+
+---
+
+- Partial
+- Readonly
+- Record
+- Pick
+- Exclude
+- Extract
+- NonNullable
+- ReturnType
+- InstanceType
+- Required
+- ThisType
+
+---
+
 ## はじめます
 
 ---
 
 <SandBox
-  initial={`type Hoge = { n: number }
-const hoge: Hoge = 'hogeeeeeee'
+  initial={`// Partial<T>
+type Customer = { id: string, name: string, age: number }
+\n// エラーになる
+const c1: Customer = { id: '123', name: '太郎' }
+\n// エラーにならない
+const c2: Partial<Customer> = { id: '123', name: '太郎' }
+`}
+/>
+
+---
+
+<SandBox
+  initial={`// Readonly<T>
+type Customer = { id: string, name: string, age: number }
+\n// エラーにならない
+const c1: Customer = { id: '123', name: '太郎', age: 28 }
+c1.age = 29
+\n// エラーになる
+const c2: Readonly<Customer> = { id: '123', name: '太郎', age: 28 }
+c2.age = 29
+`}
+/>
+
+---
+
+<SandBox
+  initial={`// Record<K,T>
+type Customer = { id: string, name: string, age: number }\n
+// エラーになる
+const c1: Customer = { id: '123', name: '太郎' }
+// エラーにならない
+const c2: Partial<Customer> = { id: '123', name: '太郎' }
+`}
+/>
+
+---
+
+<SandBox
+  initial={`// Pick<T,K>
+type Customer = { id: string, name: string, age: number }\n
+// エラーになる
+const c1: Customer = { id: '123', name: '太郎' }
+// エラーにならない
+const c2: Partial<Customer> = { id: '123', name: '太郎' }
+`}
+/>
+
+---
+
+<SandBox
+  initial={`// Exclude<T,U>
+type Customer = { id: string, name: string, age: number }\n
+// エラーになる
+const c1: Customer = { id: '123', name: '太郎' }
+// エラーにならない
+const c2: Partial<Customer> = { id: '123', name: '太郎' }
+`}
+/>
+
+---
+
+<SandBox
+  initial={`// Extract<T,U>
+type Customer = { id: string, name: string, age: number }\n
+// エラーになる
+const c1: Customer = { id: '123', name: '太郎' }
+// エラーにならない
+const c2: Partial<Customer> = { id: '123', name: '太郎' }
+`}
+/>
+
+---
+
+<SandBox
+  initial={`// NonNullable<T>
+type Customer = { id: string, name: string, age: number }\n
+// エラーになる
+const c1: Customer = { id: '123', name: '太郎' }
+// エラーにならない
+const c2: Partial<Customer> = { id: '123', name: '太郎' }
+`}
+/>
+
+---
+
+<SandBox
+  initial={`// ReturnType<T>
+type Customer = { id: string, name: string, age: number }\n
+// エラーになる
+const c1: Customer = { id: '123', name: '太郎' }
+// エラーにならない
+const c2: Partial<Customer> = { id: '123', name: '太郎' }
+`}
+/>
+
+---
+
+<SandBox
+  initial={`// InstanceType<T>
+type Customer = { id: string, name: string, age: number }\n
+// エラーになる
+const c1: Customer = { id: '123', name: '太郎' }
+// エラーにならない
+const c2: Partial<Customer> = { id: '123', name: '太郎' }
+`}
+/>
+
+---
+
+<SandBox
+  initial={`// Required<T>
+type Customer = { id: string, name: string, age: number }\n
+// エラーになる
+const c1: Customer = { id: '123', name: '太郎' }
+// エラーにならない
+const c2: Partial<Customer> = { id: '123', name: '太郎' }
+`}
+/>
+
+---
+
+<SandBox
+  initial={`// ThisType<T>
+type Customer = { id: string, name: string, age: number }\n
+// エラーになる
+const c1: Customer = { id: '123', name: '太郎' }
+// エラーにならない
+const c2: Partial<Customer> = { id: '123', name: '太郎' }
 `}
 />
 

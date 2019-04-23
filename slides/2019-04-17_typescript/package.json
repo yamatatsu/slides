@@ -6,7 +6,7 @@
   "urlPath": "typescript",
   "scripts": {
     "start": "mdx-deck deck.mdx",
-    "build": "mdx-deck build --no-html -d ../../dist/immutable deck.mdx"
+    "build": "mdx-deck build --no-html -d ../../dist/typescript deck.mdx"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
