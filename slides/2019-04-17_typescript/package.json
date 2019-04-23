@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "urlPath": "typescript",
   "scripts": {
     "start": "mdx-deck deck.mdx",
     "build": "mdx-deck build --no-html -d ../../dist/immutable deck.mdx"
