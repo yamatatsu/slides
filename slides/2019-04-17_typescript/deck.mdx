@@ -1,0 +1,51 @@
+import { Head, Image } from 'mdx-deck'
+import { Container, Row, Col } from 'react-grid-system'
+import Top from '../../components/Top.js'
+import ExLink from '../../components/ExLink.js'
+import SandBox from './components/SandBox'
+import packageJson from './package.json'
+
+export { default as theme } from '../../theme'
+
+<Top
+  title="Immutable for Redux"
+  image="https://i.gyazo.com/9e68b75fe52f55e65919e14288dc3c82.png"
+  eventName="Meguro.es #18"
+  urlPath={packageJson.urlPath}
+  hashtag="meguroes"
+/>
+
+---
+
+# 自己紹介
+
+---
+
+<img
+  src="https://i.gyazo.com/87d23d84bc93c83bb165c9d2f239f703.png"
+  width="275"
+/>
+
+- CureApp
+- アプリで医療機器を作ってる
+- TS, react, RN, Node.js, MongoDB
+
+---
+
+## はじめます
+
+---
+
+<SandBox
+  initial={`type Hoge = { n: number }
+const hoge: Hoge = 'hogeeeeeee'
+`}
+/>
+
+---
+
+## おわり。
+
+---
+
+ご清聴ありがとうございました！！
