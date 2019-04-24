@@ -11,8 +11,19 @@ export default props => {
   const isPuppeteer = window.navigator.userAgent
     .toLowerCase()
     .indexOf('headlesschrome')
-  if (isPuppeteer) {
-    return <ReactLoading type="bars" color="#222222" height={100} width={100} />
+  if (true) {
+    return (
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100vh',
+        }}
+      >
+        <ReactLoading type="bars" color="#222222" height={100} width={100} />
+      </div>
+    )
   }
 
   return (
