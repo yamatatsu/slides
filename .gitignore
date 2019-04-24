@@ -1,6 +1,7 @@
 node_modules
 *.log
 .cache
+.DS_Store
 
 dist/*
 !dist/android-chrome-192x192.png
