@@ -12,7 +12,7 @@ export default props => {
     image,
   } = props
   const url = `https://slides.yamatatsu193.net/${urlPath}`
-  const imageUrl = `url/${image}`
+  const imageUrl = `${url}/${image}`
   return (
     <Fragment>
       <link rel="icon" href="/favicon.ico" />
@@ -34,7 +34,7 @@ export default props => {
         content="https://twitter.com/yamatatsu193"
       />
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:creator" content={TWITTER_ACCOUNT}>
+      <meta name="twitter:creator" content={TWITTER_ACCOUNT} />
       <meta name="twitter:site" content={TWITTER_ACCOUNT} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
