@@ -1,11 +1,20 @@
 import React, { Fragment } from 'react'
 import { Head } from 'mdx-deck'
+import ReactLoading from 'react-loading'
 import ExLink from './ExLink'
 
 const TWITTER_ACCOUNT = '@yamatatsu193'
 
 export default props => {
   const { title, eventName, hashtag } = props
+
+  const isPuppeteer = window.navigator.userAgent
+    .toLowerCase()
+    .indexOf('headlesschrome')
+  if (isPuppeteer) {
+    return <ReactLoading type="bars" color="#222222" height={100} width={100} />
+  }
+
   return (
     <Fragment>
       <H1>{title}</H1>
