@@ -35,7 +35,7 @@ export default props => {
       />
       <meta property="og:url" content={url} />
       <meta property="og:site_name" content="Yamatatsu Slide" />
-      <meta property="og:title" content={title} />
+      <meta property="og:title" content="slides.yamatatsu193.net" />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
       {image && <meta property="og:image" content={imageUrl} />}
@@ -43,9 +43,9 @@ export default props => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={TWITTER_ACCOUNT} />
       <meta name="twitter:site" content={TWITTER_ACCOUNT} />
-      <meta name="twitter:title" content={title} />
+      <meta name="twitter:title" content="slides.yamatatsu193.net" />
       <meta name="twitter:description" content={description} />
       {image && <meta name="twitter:image:src" content={imageUrl} />}
     </Fragment>
   )
-}og:url, og:type, og:title, og:image, og:description, fb:app_id
+}
