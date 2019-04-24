@@ -8,10 +8,9 @@ const TWITTER_ACCOUNT = '@yamatatsu193'
 export default props => {
   const { title, eventName, hashtag } = props
 
-  const isPuppeteer = window.navigator.userAgent
-    .toLowerCase()
-    .indexOf('headlesschrome')
-  if (true) {
+  const isPuppeteer =
+    window.navigator.userAgent.toLowerCase().indexOf('headlesschrome') >= 0
+  if (isPuppeteer) {
     return (
       <div
         style={{
