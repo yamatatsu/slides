@@ -6,12 +6,12 @@ import SandBox from './components/SandBox'
 import packageJson from './package.json'
 import ogImage from './assets/images/og.png'
 
-export { default as theme } from '../../theme'
+export { default as theme } from '@mdx-deck/themes/base'
 
 <Top
-  title="書いて覚える Utility Types"
+  title={packageJson.slideTitle}
   eventName="WeJS #31"
-  urlPath={packageJson.urlPath}
+  urlPath={packageJson.slideKey}
   image={ogImage}
   hashtag="WeJS"
 />

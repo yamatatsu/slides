@@ -15,5 +15,10 @@ export default function SandBox(props) {
     }
   }
 
-  return <Editor onChange={_code => setCode(_code)} code={code} onExec={exec} />
+  return (
+    <>
+      <Editor onChange={_code => setCode(_code)} code={code} onExec={exec} />
+      <button onClick={exec}>command + enter</button>
+    </>
+  )
 }

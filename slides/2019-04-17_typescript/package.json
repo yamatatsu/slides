@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "urlPath": "typescript",
+  "slideKey": "typescript",
+  "slideTitle": "書いて覚える Utility Types",
   "scripts": {
     "start": "mdx-deck deck.mdx",
-    "build": "mdx-deck build --no-html -d ../../dist/$npm_package_urlPath --basepath=/$npm_package_urlPath deck.mdx"
+    "build": "mdx-deck build --no-html -d ../../dist/$npm_package_slideKey --basepath=/$npm_package_slideKey deck.mdx"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
