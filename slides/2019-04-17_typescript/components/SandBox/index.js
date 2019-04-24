@@ -8,8 +8,7 @@ export default function SandBox(props) {
 
   const exec = () => {
     try {
-      const result = evalPipe(code)
-      alert(result)
+      evalPipe(code)
     } catch (error) {
       console.error(error)
       alert(error)

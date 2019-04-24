@@ -18,6 +18,5 @@ const transformOptions = {
 }
 
 export default function evalPipe(code) {
-  const res = eval(transform(code, transformOptions).code)
-  return stringify(res)
+  eval(transform(code, transformOptions).code)
 }

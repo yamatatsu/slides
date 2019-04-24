@@ -3,7 +3,7 @@ import MonacoEditor from 'react-monaco-editor'
 
 const options = {
   minimap: { enabled: false },
-  fontSize: 16,
+  fontSize: 20,
 }
 
 export default function Editor(props) {
@@ -17,6 +17,14 @@ export default function Editor(props) {
   }, [code, editor, monaco])
 
   const editorDidMount = (editor, monaco) => {
+    const base = monaco.languages.typescript.typescriptDefaults._compilerOptions
+    monaco.languages.typescript.typescriptDefaults.setCompilerOptions({
+      ...base,
+      strict: true,
+    })
+    editor.getModel().updateOptions({
+      tabSize: 2,
+    })
     setMonaco([editor, monaco])
   }
 
