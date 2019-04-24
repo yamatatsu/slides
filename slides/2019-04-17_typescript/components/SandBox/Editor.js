@@ -3,7 +3,7 @@ import MonacoEditor from 'react-monaco-editor'
 
 const options = {
   minimap: { enabled: false },
-  fontSize: 20,
+  fontSize: 16,
 }
 
 export default function Editor(props) {

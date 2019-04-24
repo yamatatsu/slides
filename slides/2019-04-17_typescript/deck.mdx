@@ -82,14 +82,16 @@ c2.age = 29
 <SandBox
   initial={`// Record<K,T>
 type Color = 'red' | 'green' | 'blue'
-\n// だめ
-type ColorCodes1 = { [key: Color]: string }
-// だめ
-type ColorCodes2 = { [key in Color]: string }
-// OK
-type ColorCodes3 = { [key in Color]: string }
+\n// こうだったのが
+type ColorCodes1 = { [key in Color]: string }
 \n// こう書ける
-type ColorCodes4 = Record<Color, string>
+type ColorCodes2 = Record<Color, string>
+\nconst colorCodes: ColorCodes2 = {
+  red: '#ff0000',
+  green: '#00ff00',
+  blue: '#0000ff',
+  yellow: '#ffff00'
+}
 `}
 />
 
@@ -97,11 +99,12 @@ type ColorCodes4 = Record<Color, string>
 
 <SandBox
   initial={`// Pick<T,K>
-type Customer = { id: string, name: string, age: number }\n
-// エラーになる
+type Customer = { id: string, name: string, age: number }
+\n// エラーになる
 const c1: Customer = { id: '123', name: '太郎' }
-// エラーにならない
-const c2: Partial<Customer> = { id: '123', name: '太郎' }
+\n// エラーにならない
+type Customer2 = Pick<Customer, 'id' | 'name'>
+const c2: Customer2 = { id: '123', name: '太郎' }
 `}
 />
 
@@ -109,11 +112,13 @@ const c2: Partial<Customer> = { id: '123', name: '太郎' }
 
 <SandBox
   initial={`// Exclude<T,U>
-type Customer = { id: string, name: string, age: number }\n
-// エラーになる
-const c1: Customer = { id: '123', name: '太郎' }
-// エラーにならない
-const c2: Partial<Customer> = { id: '123', name: '太郎' }
+type Color = 'red' | 'green' | 'blue' | 'yellow' | 'purple'
+\n// 3原色以外
+type ColorWithoutRGB = Exclude<Color, 'red' | 'green' | 'blue'>
+\n// エラーになる
+const color1: ColorWithoutRGB = 'red'
+\n// エラーにならない
+const color2: ColorWithoutRGB = 'yellow'
 `}
 />
 
@@ -121,11 +126,16 @@ const c2: Partial<Customer> = { id: '123', name: '太郎' }
 
 <SandBox
   initial={`// Extract<T,U>
-type Customer = { id: string, name: string, age: number }\n
-// エラーになる
-const c1: Customer = { id: '123', name: '太郎' }
-// エラーにならない
-const c2: Partial<Customer> = { id: '123', name: '太郎' }
+\n// 光の三原色
+type ThreePrimaryLightColor = 'red' | 'green' | 'blue'
+// 色の三原色
+type ThreePrimaryColor = 'red' | 'blue' | 'yellow'
+\n// 共通項
+type CommonColor = Extract<ThreePrimaryLightColor, ThreePrimaryColor>
+\n// エラーにならない
+const color1: CommonColor = 'red'
+\n// エラーになる
+const color2: CommonColor = 'yellow'
 `}
 />
 
@@ -133,11 +143,11 @@ const c2: Partial<Customer> = { id: '123', name: '太郎' }
 
 <SandBox
   initial={`// NonNullable<T>
-type Customer = { id: string, name: string, age: number }\n
-// エラーになる
-const c1: Customer = { id: '123', name: '太郎' }
-// エラーにならない
-const c2: Partial<Customer> = { id: '123', name: '太郎' }
+type Name = NonNullable<string | null | undefined>
+\n// エラーになる
+const name1: Name = null
+\n// エラーにならない
+const name2: Name = '太郎'
 `}
 />
 
@@ -145,10 +155,10 @@ const c2: Partial<Customer> = { id: '123', name: '太郎' }
 
 <SandBox
   initial={`// ReturnType<T>
-type Customer = { id: string, name: string, age: number }\n
-// エラーになる
+type Customer = { id: string, name: string, age: number }
+\n// エラーになる
 const c1: Customer = { id: '123', name: '太郎' }
-// エラーにならない
+\n// エラーにならない
 const c2: Partial<Customer> = { id: '123', name: '太郎' }
 `}
 />
@@ -157,10 +167,10 @@ const c2: Partial<Customer> = { id: '123', name: '太郎' }
 
 <SandBox
   initial={`// InstanceType<T>
-type Customer = { id: string, name: string, age: number }\n
-// エラーになる
+type Customer = { id: string, name: string, age: number }
+\n// エラーになる
 const c1: Customer = { id: '123', name: '太郎' }
-// エラーにならない
+\n// エラーにならない
 const c2: Partial<Customer> = { id: '123', name: '太郎' }
 `}
 />
@@ -169,10 +179,10 @@ const c2: Partial<Customer> = { id: '123', name: '太郎' }
 
 <SandBox
   initial={`// Required<T>
-type Customer = { id: string, name: string, age: number }\n
-// エラーになる
+type Customer = { id: string, name: string, age: number }
+\n// エラーになる
 const c1: Customer = { id: '123', name: '太郎' }
-// エラーにならない
+\n// エラーにならない
 const c2: Partial<Customer> = { id: '123', name: '太郎' }
 `}
 />
@@ -181,10 +191,10 @@ const c2: Partial<Customer> = { id: '123', name: '太郎' }
 
 <SandBox
   initial={`// ThisType<T>
-type Customer = { id: string, name: string, age: number }\n
-// エラーになる
+type Customer = { id: string, name: string, age: number }
+\n// エラーになる
 const c1: Customer = { id: '123', name: '太郎' }
-// エラーにならない
+\n// エラーにならない
 const c2: Partial<Customer> = { id: '123', name: '太郎' }
 `}
 />
