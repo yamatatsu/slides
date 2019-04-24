@@ -11,4 +11,12 @@ module.exports = {
       languages: ['typescript'],
     }),
   ],
+  module: {
+    rules: [
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ['file-loader'],
+      },
+    ],
+  },
 }

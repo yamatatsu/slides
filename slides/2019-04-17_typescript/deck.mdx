@@ -4,6 +4,7 @@ import Top from '../../components/Top.js'
 import ExLink from '../../components/ExLink.js'
 import SandBox from './components/SandBox'
 import packageJson from './package.json'
+import ogImage from './assets/images/og.png'
 
 export { default as theme } from '../../theme'
 
@@ -11,6 +12,7 @@ export { default as theme } from '../../theme'
   title="書いて覚える Utility Types"
   eventName="WeJS #31"
   urlPath={packageJson.urlPath}
+  image={ogImage}
   hashtag="WeJS"
 />
 
@@ -21,15 +23,15 @@ export { default as theme } from '../../theme'
 ---
 
 - Partial
+- Required
+- Pick
 - Readonly
 - Record
-- Pick
 - Exclude
 - Extract
 - NonNullable
 - ReturnType
 - InstanceType
-- Required
 - ThisType
 
 ---
@@ -46,6 +48,10 @@ export { default as theme } from '../../theme'
 
 ---
 
+## Partial
+
+---
+
 <SandBox
   initial={`// Partial<T>\n
 type Customer = { id: string, name: string, age: number }
@@ -55,6 +61,10 @@ const c1: Customer = { id: '123', name: '太郎' }
 const c2: Partial<Customer> = { id: '123', name: '太郎' }
 `}
 />
+
+---
+
+## Required
 
 ---
 
@@ -72,6 +82,26 @@ const c1: Required<Partial<Customer>> = { id: '123', name: '太郎' }
 
 ---
 
+## Pick
+
+---
+
+<SandBox
+  initial={`// Pick<T,K>\n
+type Customer = { id: string, name: string, age: number }
+\n// エラーになる
+const c1: Customer = { id: '123', name: '太郎' }
+\n// エラーにならない
+const c2: Pick<Customer,'id'|'name'> = { id: '123', name: '太郎' }
+`}
+/>
+
+---
+
+## Readonly
+
+---
+
 <SandBox
   initial={`// Readonly<T>\n
 type Customer = { id: string, name: string, age: number }
@@ -83,6 +113,10 @@ const c2: Readonly<Customer> = { id: '123', name: '太郎', age: 28 }
 c2.age = 29
 `}
 />
+
+---
+
+## Record
 
 ---
 
@@ -104,15 +138,7 @@ type ColorCodes2 = Record<Color, string>
 
 ---
 
-<SandBox
-  initial={`// Pick<T,K>\n
-type Customer = { id: string, name: string, age: number }
-\n// エラーになる
-const c1: Customer = { id: '123', name: '太郎' }
-\n// エラーにならない
-const c2: Pick<Customer,'id'|'name'> = { id: '123', name: '太郎' }
-`}
-/>
+## Exclude
 
 ---
 
@@ -127,6 +153,10 @@ const color1: ColorWithoutRGB = 'red'
 const color2: ColorWithoutRGB = 'yellow'
 `}
 />
+
+---
+
+## Extract
 
 ---
 
@@ -147,6 +177,10 @@ const color2: CommonColor = 'yellow'
 
 ---
 
+## NonNullable
+
+---
+
 <SandBox
   initial={`// NonNullable<T>\n
 type Name = NonNullable<string | null | undefined>
@@ -159,6 +193,10 @@ const name2: Name = '太郎'
 
 ---
 
+## ReturnType
+
+---
+
 <SandBox
   initial={`// ReturnType<T>\n
 function toString(n: number) {
@@ -166,8 +204,16 @@ function toString(n: number) {
 }
 \n// 戻り値型が取れる
 type Ret = ReturnType<typeof toString>
+\n// Connectの型とかに使えそう(↓は適当)
+type Connect =
+  <S, D>(mapStateToProps: S, mapDispatchToProps: D) =>
+    (c: ComponentType<ReturnType<S> & ReturnType<D>>) => JSX
 `}
 />
+
+---
+
+## InstanceType
 
 ---
 
@@ -194,6 +240,10 @@ const taro: InstanceType<typeof Customer> = new Customer('123', '太郎')
 ---
 
 わからん 😇
+
+---
+
+## ThisType
 
 ---
 
@@ -239,7 +289,7 @@ Vue でこんな感じの API 見たことあんな 🤔
 <SandBox
   initial={`// ThisType<T>
 \n// vueの公式からパクってきた
-// このコードでthisをはめてみよう
+// このコードでthisをはめてみよう！
 const vueue = {
   data: { a: 1 },
   computed: {
