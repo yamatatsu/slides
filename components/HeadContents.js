@@ -12,6 +12,7 @@ export default props => {
     image,
   } = props
   const url = `https://slides.yamatatsu193.net/${urlPath}`
+  const imageUrl = `url/${image}`
   return (
     <Fragment>
       <link rel="icon" href="/favicon.ico" />
@@ -33,17 +34,16 @@ export default props => {
         content="https://twitter.com/yamatatsu193"
       />
       <meta name="twitter:card" content="summary" />
+      <meta name="twitter:creator" content={TWITTER_ACCOUNT}>
       <meta name="twitter:site" content={TWITTER_ACCOUNT} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      {image && <meta name="twitter:image" content={image} />}
-      {image && <meta property="og:image" content={image} />}
-      {image && <meta property="og:image:secure_url" content={image} />}
-      <meta property="og:site_name" content="slides.yamatatsu193.net" />
-      <meta property="og:locale" content="ja_JP" />
+      {image && <meta name="twitter:image:src" content={imageUrl} />}
+      {image && <meta property="og:image" content={imageUrl} />}
+      <meta property="og:site_name" content="Yamatatsu Slide" />
       <meta property="og:url" content={url} />
       <meta property="og:title" content={title} />
-      <meta property="og:type" content="article" />
+      <meta property="og:type" content="website" />
       <meta property="og:description" content={description} />
     </Fragment>
   )
