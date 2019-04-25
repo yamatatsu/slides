@@ -9,9 +9,10 @@ export default props => {
     title,
     description = `やまたつ(${TWITTER_ACCOUNT})のスライド`,
     urlPath,
-    imageUrl,
+    image,
   } = props
   const url = `https://slides.yamatatsu193.net/${urlPath}/`
+  const imageUrl = `${url}${image}`
   return (
     <Fragment>
       <meta property="og:url" content={url} />
