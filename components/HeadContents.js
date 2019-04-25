@@ -9,20 +9,20 @@ export default props => {
     title,
     description = `やまたつ(${TWITTER_ACCOUNT})のスライド`,
     urlPath,
-    image,
+    imageUrl,
   } = props
   const url = `https://slides.yamatatsu193.net/${urlPath}/`
   const imageUrl = `${url}${image}`
-  const ogTitle = `yamatatsu${urlPath}`
   return (
     <Fragment>
       <meta property="og:url" content={url} />
       <meta property="og:site_name" content="Yamatatsu Slide" />
-      <meta property="og:title" content={ogTitle} />
+      <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
-      {image && <meta property="og:image" content={imageUrl} />}
-      <meta property="fb:app_id" content={'595262567660316'} />
+      <meta property="og:image" content={imageUrl} />
+      <meta property="fb:app_id" content="595262567660316" />
+      <meta name="twitter:card" content="summary_large_image" />
       <link rel="icon" href="/favicon.ico" />
       <link
         rel="apple-touch-icon"
@@ -37,11 +37,6 @@ export default props => {
       />
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta
-        property="article:auther"
-        content="https://twitter.com/yamatatsu193"
-      />
     </Fragment>
   )
 }
-// <meta name="twitter:card" content="summary_large_image" />
