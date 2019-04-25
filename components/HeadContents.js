@@ -16,6 +16,13 @@ export default props => {
   const ogTitle = `yamatatsu${urlPath}`
   return (
     <Fragment>
+      <meta property="og:url" content={url} />
+      <meta property="og:site_name" content="Yamatatsu Slide" />
+      <meta property="og:title" content={ogTitle} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content="website" />
+      {image && <meta property="og:image" content={imageUrl} />}
+      <meta property="fb:app_id" content={'595262567660316'} />
       <link rel="icon" href="/favicon.ico" />
       <link
         rel="apple-touch-icon"
@@ -34,19 +41,7 @@ export default props => {
         property="article:auther"
         content="https://twitter.com/yamatatsu193"
       />
-      <meta property="og:url" content={url} />
-      <meta property="og:site_name" content="Yamatatsu Slide" />
-      <meta property="og:title" content={ogTitle} />
-      <meta property="og:description" content={description} />
-      <meta property="og:type" content="website" />
-      {image && <meta property="og:image" content={imageUrl} />}
-      <meta property="fb:app_id" content={'595262567660316'} />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content={TWITTER_ACCOUNT} />
-      <meta name="twitter:site" content={TWITTER_ACCOUNT} />
-      <meta name="twitter:title" content={ogTitle} />
-      <meta name="twitter:description" content={description} />
-      {image && <meta name="twitter:image:src" content={imageUrl} />}
     </Fragment>
   )
 }
+// <meta name="twitter:card" content="summary_large_image" />
