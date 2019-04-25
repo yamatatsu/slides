@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { Head } from 'mdx-deck'
-import ReactLoading from 'react-loading'
+import PulseLoader from 'react-spinners/PulseLoader'
 import ExLink from './ExLink'
 
 const TWITTER_ACCOUNT = '@yamatatsu193'
@@ -20,7 +20,12 @@ export default props => {
           height: '100vh',
         }}
       >
-        <ReactLoading type="bars" color="#222222" height={100} width={100} />
+        <PulseLoader
+          sizeUnit={'px'}
+          size={20}
+          color={'#222222'}
+          loading={true}
+        />
       </div>
     )
   }
