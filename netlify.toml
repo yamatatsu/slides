@@ -4,7 +4,7 @@
   publish = "public"
 [[redirects]]
   from = "/typescript"
-  to = "/typescript/"
+  to = "/typescript/0"
   status = 302
 [[redirects]]
   from = "/typescript/*"
@@ -12,7 +12,7 @@
   status = 200
 [[redirects]]
   from = "/cdk"
-  to = "/cdk/"
+  to = "/cdk/0"
   status = 302
 [[redirects]]
   from = "/cdk/*"
