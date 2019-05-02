@@ -3,6 +3,6 @@
   to = "/typescript/index.html"
   status = 200
 [[redirects]]
-  from = "/cdk/:page"
-  to = "https://2019-05-01-cdk.netlify.com/:page"
+  from = "/cdk/*"
+  to = "https://2019-05-01-cdk.netlify.com/:splat"
   status = 200
