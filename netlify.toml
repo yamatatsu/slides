@@ -1,3 +1,7 @@
+[build]
+  command = "yarn build"
+  functions = "functions"
+  publish = "public"
 [[redirects]]
   from = "/typescript/*"
   to = "https://slides-before-2019-04.netlify.com/typescript/:splat"
