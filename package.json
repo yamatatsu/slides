@@ -4,8 +4,7 @@
   "author": "yamatatsu <the.kinnikuman@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "prebuild": "lerna bootstrap",
-    "build": "lerna run build"
+    "build": "echo '空振り'"
   },
   "devDependencies": {
     "prettier": "^1.17.0"
