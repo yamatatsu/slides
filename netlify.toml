@@ -3,12 +3,17 @@
   functions = "functions"
   publish = "public"
 [[redirects]]
+  from = "/typescript"
+  to = "/typescript/"
+  status = 302
+[[redirects]]
   from = "/typescript/*"
   to = "https://slides-before-2019-04.netlify.com/typescript/:splat"
   status = 200
 [[redirects]]
   from = "/cdk"
   to = "/cdk/"
+  status = 302
 [[redirects]]
   from = "/cdk/*"
   to = "https://2019-05-01-cdk.netlify.com/:splat"
