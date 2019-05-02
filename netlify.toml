@@ -1,6 +1,6 @@
 [[redirects]]
-  from = "/typescript/:page"
-  to = "/typescript/index.html"
+  from = "/typescript/*"
+  to = "https://slides-before-2019-04.netlify.com/typescript/:splat"
   status = 200
 [[redirects]]
   from = "/cdk/*"
