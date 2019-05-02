@@ -8,5 +8,5 @@
   status = 200
 [[redirects]]
   from = "/cdk/*"
-  to = "https://2019-05-01-cdk.netlify.com/:splat"
+  to = "https://2019-05-01-cdk.netlify.com/cdk/:splat"
   status = 200
