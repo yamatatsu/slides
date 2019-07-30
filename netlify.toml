@@ -25,6 +25,7 @@
   from = "/ts-subtype"
   to = "/ts-subtype/"
   status = 301
+  force = true
 [[redirects]]
   from = "/ts-subtype/*"
   to = "https://adoring-bhabha-5e8abc.netlify.com/:splat"
