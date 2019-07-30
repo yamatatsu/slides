@@ -23,12 +23,8 @@
 
 [[redirects]]
   from = "/ts-subtype"
-  to = "/ts-subtype/"
+  to = "/ts-subtype/#slide=1"
   status = 302
-[[redirects]]
-  from = "/ts-subtype"
-  to = "https://adoring-bhabha-5e8abc.netlify.com"
-  status = 200
 [[redirects]]
   from = "/ts-subtype/*"
   to = "https://adoring-bhabha-5e8abc.netlify.com/:splat"
