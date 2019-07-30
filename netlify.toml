@@ -23,7 +23,7 @@
 
 [[redirects]]
   from = "/ts-subtype"
-  to = "/ts-subtype/#slide=1"
+  to = "/ts-subtype/s"
   status = 302
 [[redirects]]
   from = "/ts-subtype/*"
