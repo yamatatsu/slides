@@ -22,10 +22,10 @@
   status = 200
 
 [[redirects]]
+  from = "/ts-subtype"
+  to = "/ts-subtype/s"
+  status = 301
+[[redirects]]
   from = "/ts-subtype/*"
   to = "https://adoring-bhabha-5e8abc.netlify.com/:splat"
   status = 200
-[[redirects]]
-  from = "/ts-subtype"
-  to = "/ts-subtype/s"
-  status = 302
