@@ -29,3 +29,12 @@
   from = "/ts-subtype/*"
   to = "https://adoring-bhabha-5e8abc.netlify.com/:splat"
   status = 200
+
+[[redirects]]
+  from = "/rxjs"
+  to = "/rxjs/index.html"
+  status = 301
+[[redirects]]
+  from = "/rxjs/*"
+  to = "https://fervent-jepsen-d174a4.netlify.com/:splat"
+  status = 200
